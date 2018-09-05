@@ -23,3 +23,10 @@ em, b{
 li{
     font-size: 26px;
 }
+.list{
+    font-size: 30px;
+    font-weight: bold;
+}
+#story{
+    margin-left: 40px;
+}
