@@ -8,12 +8,28 @@ h1{
     border: 5px solid olivedrab;
 }
 .box {
-
+    float: left;
 	border: 2px solid darkblue;
 	padding-left: 10px;
+    width: 20%;
 }
 .box2 {
-  border: 2px solid red;
+    float: left;
+    border: 2px solid red;
+    width: 78%
 }
-
-
+.box3 {
+    float:left;
+    padding-left:78%;
+    padding-bottom:40%;
+}
+.box3b {
+    border: 2px solid darkgreen;
+    float:left;
+    width: 780px;
+    height: 395px;
+    text-align: center;
+    image-rendering: auto;
+    /*padding-left: 260px;
+    padding-right: 259px;*/
+}
