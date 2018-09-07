@@ -12,12 +12,22 @@ img{
     width: 150px;
     height:150px;
 }
-.box {
+.box {/*Left*/
+    float:left;
     border-radius: 5px;
     background-color: rgb(207,232,220);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
-.box2 {
+.box2 {/*Right*/
+    float:right;
     border-radius: 5px;
     background-color: rgb(207,232,220);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding: 10px;
 }
-
+.ppage2 {
+    text-align: right;
+}
