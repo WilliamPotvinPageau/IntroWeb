@@ -27,9 +27,10 @@ h1{
     border: 2px solid darkgreen;
     float:left;
     width: 780px;
-    height: 395px;
+    height: 330px;
     text-align: center;
     image-rendering: auto;
+    padding-top: 65px
     /*padding-left: 260px;
     padding-right: 259px;*/
 }
