@@ -1,0 +1,31 @@
+﻿main{
+	margin:0 auto;  /* permet de centrer à 60% de la page*/
+	width: 60%;
+}
+h1,h2{
+	border: 2px solid blue;
+	text-align: center;
+}
+nav{
+	border: 2px solid black;
+	float: left;
+	padding: 4px;
+}
+
+#section1{
+	border: 2px solid green;
+	float:left;
+	width: 40%;
+
+}
+
+#section2{
+	border: 2px solid red;
+	float:left;
+	padding-bottom: 20px;
+}
+footer{
+	font-style: italic;
+	border: 2px solid purple;
+	float:left;
+}
