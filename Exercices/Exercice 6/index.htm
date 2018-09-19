@@ -10,9 +10,68 @@
 	<meta name="robots" content="index,follow">
 	<link rel="stylesheet " href ="CSS/Style.css"/>
 </head>
-<div class="form-style">
-<div class="Entete">Entrez les informations du membre</div>
-
+<body>
+	<div class="form-style">
+	<div class="Entete">Entrez les informations du membre</div>
+	<form action="" method="get">
+		<div>
+			<label for="nom">Nom <i>*</i></label>
+			<input id="nom" type="text" name="txtNom">
+		</div>
+		<div>
+			<label for="prenom">Prenom <i>*</i></label>
+			<input id="prenom" type="text" name="txtPrenom">
+		</div>
+		<div>
+			<label for="adresse">Adresse</label>
+			<input id="adresse" type="text" name="txtAdresse" placeholder="999 rue">
+		</div>
+		<div>
+			<label for="ville">Ville</label>
+			<input id="ville" type="text" name="txtVille">
+		</div>
+		<div>
+			<label for="tel">Téléphone <i>*</i></label>
+			<input id="tel" type="text" name="txtTel" placeholder="999 999-9999" maxlenght="12">
+		</div>
+		<div>
+			<label for="inscr">Date d'inscription <i>*</i></label>
+			<input id="inscr" type="text" name="txtInscr" placeholder="jj/mm/aaaa">
+		</div>
+		<div>
+			<label for="datefin">Date de fin</label>
+			<input id="datefin" type="date" name="dateFin">
+		</div>
+		<div>
+			<label for="sexe">Sexe</label>
+			<input id="sexe" type="radio" name="radSexe" value="masculin">Masculin
+			<input type="radio" name="radSexe" value="féminin">Féminin
+		</div>
+		<div>
+			<label for="choix">Choix</label>
+			<select id="choix" name="lstChoix">
+				<option value="Choix1">Américain Express</option>
+				<option value="Choix2">Mastercard</option>
+				<option value="Choix3">Visa</option>
+			</select>
+		</div>
+		<div>
+			<label for="carte">Carte de crédit <i>*</i></label>
+			<input id="carte" type="text" name="txtCarte" placeholder="9999 9999 9999 9999" maxlenght="19">
+		</div>
+		<div>
+			<label for="mdp">Mot de passe <i>*</i></label>
+			<input id="mdp" type="password" name="passMDP">
+		</div>
+		<div>
+			<label for="email">Courriel</label>
+			<input id="email" type="text" name="txtEmail" placeholder="aaaaaa@aaaa.aaa">
+		</div>
+		<div>
+			<input type="submit" value="Envoyer">
+			<input type="reset" value="Réinitialliser">
+		</div>
+	</form>
 </div>
 </body>
 </html>
