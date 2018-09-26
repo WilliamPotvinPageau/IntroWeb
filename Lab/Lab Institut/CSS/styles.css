@@ -156,4 +156,28 @@ footer p {
 
 }
 
+span{
+	color: red;
+}
 
+label{
+	display: block;
+	width: 200px;
+	float: left;
+	margin-left: 50px;
+}
+textarea,input{
+	width: 300px;
+}
+#tel{
+	width: 100px;
+}
+.button{
+	height: 25px;
+}
+#button1{
+	margin-left: 50px;
+}
+form div{
+	margin-bottom: 10px;
+}
