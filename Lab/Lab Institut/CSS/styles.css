@@ -194,4 +194,12 @@ td, th{
 caption{
     color:#b1cb97;
     font:bold 1em Verdana;
+    margin-bottom: 15px;
+}
+tr{
+    display: none;
+}
+table:hover tr{
+    background-color: #9ec06a;
+    display: block;
 }
