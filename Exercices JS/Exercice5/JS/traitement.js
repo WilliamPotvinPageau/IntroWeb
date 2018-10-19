@@ -2,7 +2,7 @@ function btnCalculer_onclick()
 {
     var Revenus, Loyer, Nourriture, Deplacement, Reste;
 
-    Revenus=(document.getElementById("txtRevenus").value);
+    Revenus=parseFloat(document.getElementById("txtRevenus").value);
     Loyer=parseFloat(document.getElementById("txtLoyer").value);
     Nourriture=parseFloat(document.getElementById("txtNourriture").value);
     Deplacement=parseFloat(document.getElementById("txtDeplacement").value);
