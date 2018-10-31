@@ -1,22 +1,28 @@
 function btnCalculer_onclick()
-{ 
- 	var NbBilletEtu, NbBillet65, NbBilletAdlt, Rabais,Cout, Total;
+{
+    var Nbr1, Nbr2, Nbr3, Nbr4;
 
-    NbBilletEtu=parseFloat(document.getElementById("txtEtu").value);
-    NbBillet65=parseFloat(document.getElementById("txt65+").value);
-    NbBilletAdlt=parseFloat(document.getElementById("txtAdlt").value);
+    Nbr1=parseFloat(document.getElementById("txtNbre1").value);
+    Nbr2=parseFloat(document.getElementById("txtNbre2").value);
+    Nbr3=parseFloat(document.getElementById("txtNbre3").value);
+    Nbr4=3;
 
-    if(NbBilletEtu+NbBillet65+NbBilletAdlt > 5)
+    if((Nbr1>=Nbr2)&&(Nbr2!=Nbr3))
     {
- 	     Rabais=0.10
+        Nbr4=Nbr4+2*Nbr1;
     }
     else
     {
-        Rabais=0
+        if((Nbr1==Nbr2)||(Nbr2>Nbr3))
+        {
+            Nbr4=Nbr4+Nbr1;
+        }
+        else
+        {
+            Nbr4=Nbr4*Nbr2/Nbr1-Nbr3;
+        }
+
     }
 
-    Cout=((NbBilletEtu*12)+(NbBillet65*15)+(NbBilletAdlt*20));
-    Total = Cout-(Cout*Rabais)
-
- 	console.log("Le coût total de vos billets est de "+Total+"$")
+    document.getElementById("lblMessage").innerHTML=Nbr4;
 }
