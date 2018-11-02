@@ -19,6 +19,8 @@
 		<option value="Mélissa Caron" >Mélissa Caron</option>
 	</select>
 
+	<p class="Align"> Entrez le nombre d'heures travaillées:<input class="champ" id="txtNbreHeures" name="txtNbreHeures" value="">  </p>
+
 	<p class="Align"> Entrez le nombre de jours:<input class="champ" id="txtNbreJours" name="txtNbreJours" value="">  </p> 
 
 	<!-- Case à cocher -->
@@ -26,9 +28,10 @@
 
 	<!-- Case à cocher -->
 	<p class="Align">
-	Chien<input type="radio" name="radChoix" checked=true id="radChien">
-	Chat<input type="radio" name="radChoix" id="radChat">
+	Chien<input type="radio" name="radChoix" checked=true id="radChien" value="1" onclick="radChien_onclick()">
+	Chat<input type="radio" name="radChoix" id="radChat" value="2" onclick="radChat_onclick()">
 	</p>
+
 
 	<!-- label affichage -->
 	<p class="Align" id="lblMessage" name="lblMessage">le résultat s'affiche ici </p>
@@ -36,6 +39,7 @@
 	<!-- Bouton -->
 	<input class="label_plus" id="btnCalculer" name="btnCalculer" value="C   A   L   C   U   L   E   R" type="button" onclick="btnCalculer_onclick()"> 
 </form>
+<div><img src="img/Img1.jpg" id="imgAnimal" name="imgAnimal"/> </div>
 <script src="JS/traitement.js"></script>
 </body>
 </html>
