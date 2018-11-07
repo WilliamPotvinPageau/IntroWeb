@@ -7,14 +7,15 @@
 <body>
 	<form>
 	 <h1 id="lblNbreJoueur"> Numéro du joueur 1</h1>
-	 <p>Entrez le nom du joueur: <input id="txtNom"><button id="btnRechercher" name="btnRechercher" type="button">Rechercher</button></p>
+	 <p>Entrez le nom du joueur: <input id="txtNom"><button id="btnRechercher" name="btnRechercher" type="button" disabled="true">Rechercher</button></p>
 	 <p>Entrez les points:       <input id="txtPoints"  value=0></p>
-	 <p> <button id="btnAjouter" name="btnAjouter" type="button" >Ajouter</button> 
-		 <button id="btnTrouverMoy" name="btnTrouverMoy" type="button"  disabled="true" >Moyenne</button> 
-		 <button id="btnTrouverMeilleur" name="btnTrouverMeilleur" type="button"  disabled="true" >Meilleur Pointage</button>
-		 <button id="btnTrouverPire" name="btnTrouverPire" type="button"  disabled="true">Pire Pointage</button>
+	 <p> <button id="btnAjouter" name="btnAjouter" type="button" onclick="onclick_btnAjouter()">Ajouter</button>
+		 <button id="btnTrouverMoy" name="btnTrouverMoy" type="button" onclick="onclick_btnTrouverMoy()"  disabled="true" >Moyenne</button>
+		 <button id="btnTrouverMeilleur" name="btnTrouverMeilleur" type="button" onclick="onclick_btnTrouverMeilleur()" disabled="true" >Meilleur Pointage</button>
+		 <button id="btnTrouverPire" name="btnTrouverPire" type="button" onclick="onclick_btnTrouverPire()"  disabled="true">Pire Pointage</button>
 	 </p>
 	  <p id="lblReponse">Réponse</p>
-	</form> 
+	</form>
+	<script src="js/traitement.js"></script>
 </body>
 </html>
