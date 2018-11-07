@@ -1,11 +1,27 @@
+var Veterinaire, NbJrs, NbHrs, Service,ServMsg, Animal, Tarif, TauxHoraire, Cout, Rabais, Total;
+
+
 function btnCalculer_onclick()
 {
-    var Veterinaire, NbJrs, NbHrs, Service,ServMsg, Animal, Tarif, TauxHoraire, Cout, Rabais, Total;
+    SaisirDonees();
+    CalculerRabais();
+    CalculerTauxHoraire();
+    CalculerService();
+    CalculerTotal();
 
+    document.getElementById("lblMessage").innerHTML="Vétérinaire responsable est "+Veterinaire+". Le montant pour la garde de votre "+Animal+" est de "+Total+" pour "+NbJrs+" jours, "+ServMsg+" service de toilettage.";
+
+}
+
+function SaisirDonees()
+{
     Veterinaire=(document.getElementById("lstVeterinaire").value);
     NbJrs=parseFloat(document.getElementById("txtNbreJours").value);
     NbHrs=parseFloat(document.getElementById("txtNbreHeures").value);
+}
 
+function CalculerRabais()
+{
     if((NbJrs>=1)&&(NbJrs<5))
     {
         Rabais=0;
@@ -28,20 +44,26 @@ function btnCalculer_onclick()
             }
         }
     }
+}
 
+function CalculerTauxHoraire()
+{
     switch(Veterinaire)
     {
         case "Audrey Bouchard": TauxHoraire=25;
-        break;
+            break;
         case "Stéphane Tremblay": TauxHoraire=35;
-        break;
+            break;
         case "Maxime Simard": TauxHoraire=40;
-        break;
+            break;
         case "Mélissa Caron": TauxHoraire=45;
-        break;
+            break;
         default:TauxHoraire="Erreur";
     }
+}
 
+function CalculerService()
+{
     if((document.getElementById("chkServ").checked))
     {
         Service=5;
@@ -64,13 +86,15 @@ function btnCalculer_onclick()
         Animal="chat";
 
     }
+}
 
+function CalculerTotal()
+{
     Cout=(Tarif*NbJrs)+(TauxHoraire*NbHrs)+Service;
     Cout=Cout+(Cout*0.14975);
     Total=Cout-(Cout*Rabais);
-    document.getElementById("lblMessage").innerHTML="Vétérinaire responsable est "+Veterinaire+". Le montant pour la garde de votre "+Animal+" est de "+Total+" pour "+NbJrs+" jours, "+ServMsg+" service de toilettage.";
-
 }
+
 function radChien_onclick()
 {
     document.getElementById("imgAnimal").src="img/Img1.jpg"
