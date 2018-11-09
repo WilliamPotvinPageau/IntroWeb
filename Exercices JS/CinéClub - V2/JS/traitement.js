@@ -6,7 +6,7 @@ function btnCalculer_onclick()
     calculerRabais();
     calculerTotal();
 
-    console.log("un billet du "+representation+" pour un spectateur de "+age+ " ans coûte $"+total+" pour le film "+film+".")
+    document.getElementById("lblMessage").innerHTML="un billet du "+representation+" pour un spectateur de "+age+ " ans coûte $"+total+" pour le film "+film+"."
 }
 
 function calculerTotal()
