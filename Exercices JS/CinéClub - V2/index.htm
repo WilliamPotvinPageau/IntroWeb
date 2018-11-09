@@ -16,7 +16,7 @@
       <!-- Liste déroulante -->
       <p> Sélectionnez le choix du film:
          <select 
-           id="lstOptions" size=1 name="lstOptions">
+           id="lstOptions" size=1 name="lstOptions" onchange="onchange_lstOptions()">
          	<option selected >Au poste!</option>
          	<option >Colette</option>
          	<option >Halloween</option>
@@ -34,6 +34,9 @@
       <p><button id="btnCalculer" name="btnCalculer" type="button" onclick="btnCalculer_onclick()">Calculer</button></p>
    </fieldset>
 </form>
+<div>
+    <img id="imgFilm" src="img/Film1.jpg" />
+</div>
 <script src="JS/traitement.js"></script>
 </body>
 </html>

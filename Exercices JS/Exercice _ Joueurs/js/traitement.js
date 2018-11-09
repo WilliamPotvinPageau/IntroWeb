@@ -12,6 +12,7 @@ function onclick_btnAjouter()
         document.getElementById("btnTrouverMoy").disabled=false;
         document.getElementById("btnTrouverMeilleur").disabled=false;
         document.getElementById("btnTrouverPire").disabled=false;
+        document.getElementById("btnRechercher").disabled=false;
         document.getElementById("lblNbreJoueur").innerHTML="Numéro du joueur "+ i;
     }
     else
@@ -32,26 +33,52 @@ function onclick_btnTrouverMoy()
 
 function onclick_btnTrouverMeilleur()
 {
-    var Meilleur=0;
+    var Meilleur=0,nom;
     for (i=0;i<4;i++)
     {
         if(Meilleur<tabPoints[i])
         {
-            Meilleur=tabPoints[i]
+            Meilleur=tabPoints[i];
+            nom=tabJoueurs[i];
         }
     }
+    document.getElementById("txtNom").value=nom;
     document.getElementById("lblReponse").innerHTML="Le meilleur score est de "+Meilleur+" points";
 }
 
 function onclick_btnTrouverPire()
 {
-    var Pire=9999999;
+    var Pire=9999999,nom;
     for (i=0;i<4;i++)
     {
         if(Pire>tabPoints[i])
         {
-            Pire=tabPoints[i]
+            Pire=tabPoints[i];
+            nom=tabJoueurs[i];
         }
     }
+    document.getElementById("txtNom").value=nom;
     document.getElementById("lblReponse").innerHTML="Le pire score est de "+Pire+" points";
+}
+
+function onclick_btnRechercher()
+{
+    var trouve=false;
+    i=0;
+    while (i<4&&trouve==false)
+    {
+        if (tabJoueurs[i] == document.getElementById("txtNom").value)
+        {
+            trouve=true;
+            document.getElementById("txtPoints").value=tabPoints[i];
+        }
+        else
+        {
+            i++
+        }
+    }
+    if(trouve==true)
+        document.getElementById("lblReponse").innerHTML="le joueur(Joueuse) "+tabJoueurs[i]+" à "+tabPoints[i]+" points";
+    else
+        document.getElementById("lblReponse").innerHTML="le joueur(Joueuse) "+tabJoueurs[i]+" n'existe pas";
 }
