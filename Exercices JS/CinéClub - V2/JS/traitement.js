@@ -68,24 +68,6 @@ function calculerRabais()
 
 function onchange_lstOptions()
 {
-    var img;
     film=(document.getElementById("lstOptions").value);
-    switch(film)
-    {
-        case "Au poste!":img="Film1";
-            break;
-
-        case "Colette": img="Film2";
-            break;
-
-        case "Halloween":img="Film3";
-            break;
-
-        case "La religieuse":img="Film4";
-            break;
-
-        default:img="Film1";
-            break;
-    }
-    document.getElementById("imgFilm").src="img/"+img+".jpg"
+    document.getElementById("imgFilm").src="img/"+film+".jpg"
 }
