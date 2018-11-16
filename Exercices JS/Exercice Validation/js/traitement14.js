@@ -37,12 +37,8 @@ function CalculerTotal(Num1, Num2, Signe)
 }
 
 function valideChamps() {
-    var tabValide = new Array(3);
+    var tabValide = document.getElementsByName("txt");
     var valide = false, i = 0;
-
-    tabValide[0] = "txtNbre1";
-    tabValide[1] = "txtNbre2";
-    tabValide[2] = "txtOperateur";
 
     for (i = 0; i < 3; i++)
     {
@@ -58,14 +54,14 @@ function valideExiste(Nbre)
 {
     var valide=true;
 
-    if(document.getElementById(Nbre).value==="")
+    if(Nbre.value==="")
     {
         valide=false;
-        document.getElementById(Nbre).style.backgroundColor="red";
+        Nbre.style.backgroundColor="red";
     }
     else
     {
-        document.getElementById(Nbre).style.backgroundColor="white";
+        Nbre.style.backgroundColor="white";
     }
     return valide;
 }
