@@ -36,14 +36,23 @@ function CalculerTotal(Num1, Num2, Signe)
     return Total;
 }
 
-function valideChamps()
-{
-    var valide=false;
+function valideChamps() {
+    var tabValide = new Array(3);
+    var valide = false, i = 0;
 
-        if ((valideExiste("txtNbre1")===true) && (valideExiste("txtNbre2")===true) && (valideExiste("txtOperateur")===true))
+    tabValide[0] = "txtNbre1";
+    tabValide[1] = "txtNbre2";
+    tabValide[2] = "txtOperateur";
+
+    for (i = 0; i < 3; i++)
+    {
+        if (valideExiste(tabValide[i])===true)
         {
             valide=true;
         }
+    }
+
+
 }
 function valideExiste(Nbre)
 {
