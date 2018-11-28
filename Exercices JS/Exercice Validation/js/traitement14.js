@@ -2,9 +2,22 @@ function btnCalculer_onclick()
 { 
  	var Total;
 
- 	valideChamps();
-    Total=SaisirDonnees();
-    document.getElementById("lblMessage").innerHTML=Total;
+ 	if (valideChampsObligatoire()===true)
+    {
+        if (valideChamps()===true)
+        {
+            Total=SaisirDonnees();
+            document.getElementById("lblMessage").innerHTML=Total;
+        }
+        else
+        {
+            document.getElementById("lblMessage").innerHTML="Erreur";
+        }
+    }
+    else
+    {
+        document.getElementById("lblMessage").innerHTML="Erreur";
+    }
 }
 function SaisirDonnees()
 {
@@ -36,7 +49,8 @@ function CalculerTotal(Num1, Num2, Signe)
     return Total;
 }
 
-function valideChamps() {
+function valideChampsObligatoire()
+{
     var tabValide = document.getElementsByName("txt");
     var valide = false, i = 0;
 
@@ -47,8 +61,7 @@ function valideChamps() {
             valide=true;
         }
     }
-
-
+    return valide;
 }
 function valideExiste(Nbre)
 {
@@ -62,6 +75,46 @@ function valideExiste(Nbre)
     else
     {
         Nbre.style.backgroundColor="white";
+    }
+    return valide;
+}
+function valideNum(Num)
+{
+    return /^\d+$/.test(Num);
+}
+function valideSigne(Signe)
+{
+    return /^[-+*/]$/.test(Signe);
+}
+function valideChamps()
+{
+    var valide=true;
+    if(valideNum(document.getElementById("txtNbre1").value)===false)
+    {
+        valide=false;
+        document.getElementById("txtNbre1").style.backgroundColor="red"
+    }
+    else
+    {
+        document.getElementById("txtNbre1").style.backgroundColor="white"
+    }
+    if(valideNum(document.getElementById("txtNbre2").value)===false)
+    {
+        valide=false;
+        document.getElementById("txtNbre2").style.backgroundColor="red"
+    }
+    else
+    {
+        document.getElementById("txtNbre2").style.backgroundColor="white"
+    }
+    if(valideSigne(document.getElementById("txtOperateur").value)===false)
+    {
+        valide=false;
+        document.getElementById("txtOperateur").style.backgroundColor="red"
+    }
+    else
+    {
+        document.getElementById("txtOperateur").style.backgroundColor="white"
     }
     return valide;
 }
