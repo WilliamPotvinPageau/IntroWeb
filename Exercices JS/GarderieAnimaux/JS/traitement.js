@@ -3,11 +3,17 @@ var Veterinaire, NbJrs, NbHrs, Service,ServMsg, Animal, Tarif, TauxHoraire, Cout
 
 function btnCalculer_onclick()
 {
-    SaisirDonees();
-    CalculerRabais();
-    CalculerTauxHoraire();
-    CalculerService();
-    CalculerTotal();
+    if(valideChamps()===true)
+    {
+        if(valideFormat()===true)
+        {
+            SaisirDonees();
+            CalculerRabais();
+            CalculerTauxHoraire();
+            CalculerService();
+            CalculerTotal();
+        }
+    }
 
     document.getElementById("lblMessage").innerHTML="Vétérinaire responsable est "+Veterinaire+". Le montant pour la garde de votre "+Animal+" est de "+Total+" pour "+NbJrs+" jours, "+ServMsg+" service de toilettage.";
 
@@ -103,4 +109,63 @@ function radChien_onclick()
 function radChat_onclick()
 {
     document.getElementById("imgAnimal").src="img/Img2.jpg"
+}
+
+function valideChamps()
+{
+    var tabValide=document.getElementsByName("txt");
+    var i, valide=false;
+    for (i=0;i<2;i++)
+    {
+        if(valideExiste(tabValide[i])===true)
+        {
+            valide=true
+        }
+    }
+    return valide;
+}
+function valideExiste(chaine)
+{
+    var valide=true;
+    if (chaine.value==="")
+    {
+        valide=false;
+        chaine.style.borderColor="red";
+    }
+    else
+    {
+        chaine.style.borderColor="";
+    }
+    return valide;
+}
+function valideFormat()
+{
+    var valide=false;
+    if(valideTel(document.getElementById("txtTel").value)===true)
+    {
+        valide=true;
+        document.getElementById("txtTel").style.borderColor=""
+    }
+    else
+    {
+        document.getElementById("txtTel").style.borderColor="red"
+    }
+    if(valideNom(document.getElementById("txtNom").value)===true)
+    {
+        valide=true;
+        document.getElementById("txtNom").style.borderColor=""
+    }
+    else
+    {
+        document.getElementById("txtNom").style.borderColor="red"
+    }
+    return valide;
+}
+function valideTel(Tel)
+{
+    return /^(\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4})$/.test(Tel)
+}
+function valideNom(Nom)
+{
+    return /^[A-Z][a-z]+(-[A-Z][a-z]+)? [A-Z][a-z]+(-[A-Z][a-z]+)?$/.test(Nom)
 }

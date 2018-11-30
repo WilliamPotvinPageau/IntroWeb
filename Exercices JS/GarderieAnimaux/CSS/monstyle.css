@@ -35,6 +35,11 @@ h1 {
   width: 30px;
 }
 
+.champLong
+{
+    width: 120px;
+}
+
 .label_plus {
 display:block;
 width:240px;
