@@ -39,7 +39,7 @@
 			<!--fin Nav-->
 			<h1>Entrez les informations du membre</h1>
 			<!--boîte de texte-->
-			<form method="get" id="frmMembre" action="">
+			<form method="get" id="frmMembre" action="Reponse.htm" onsubmit="return frmMembre_onsubmit()">
 			<label id="lblMessageErreur"></label>
 			<div><label>Nom<span>*</span></label><input type="text" id="txtNom" name="txt"  size="40" ></div>
 			<div><label>Prénom<span>*</span></label><input type="text" id="txtPrenom" name="txt" size="40"></div>
@@ -53,7 +53,7 @@
 				<option value="étudiant">étudiant</option>
 				<option value="retraité">retraité</option>
 			</select>
-			<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="button"onclick="frmMembre_onclick()" />   <input class="bouton" type="reset" value="Réintialiser"/></div>
+			<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="submit" />   <input class="bouton" type="reset" value="Réintialiser"/></div>
 		</form>
 			<!--ligne de séparation-->
 			<hr>
