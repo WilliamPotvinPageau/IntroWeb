@@ -40,21 +40,23 @@
 			<h1>Entrez les informations du membre</h1>
 			<!--boîte de texte-->
 			<form method="get" id="frmMembre" action="Reponse.htm" onsubmit="return frmMembre_onsubmit()">
-			<label id="lblMessageErreur"></label>
-			<div><label>Nom<span>*</span></label><input type="text" id="txtNom" name="txt"  size="40" ></div>
-			<div><label>Prénom<span>*</span></label><input type="text" id="txtPrenom" name="txt" size="40"></div>
-			<div><label>Adresse<span>*</span></label><input type="text" id="txtAdresse" name="txt" size="40" ></div>
-			<div><label>Ville<span>*</span></label><input type="text" id="txtVille" name="txt" size="40" ></div>
-			<div><label>Code postal</label><input type="text" id="txtCodePostal" name="txtCodePostal" size="15" ></div>
-			<div><label for="tel">Téléphone<span>*</span></label><input type="text" id="txtTel" name="txt" size="13" class="obligatoire" value=""></div>
-			<div><label>Code permanant</label><input type="text" id="txtCodePerm" name="txtCodePerm" size="12" ></div>
-			<label for="type">Catégorie</label><select id="type" name="type">
-				<option value="adulte" selected>adulte</option>
-				<option value="étudiant">étudiant</option>
-				<option value="retraité">retraité</option>
-			</select>
-			<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="submit" />   <input class="bouton" type="reset"  value="Réintialiser" onclick="return confirm('Voulez-vous vraiment effacer les donées?')"/></div>
-		</form>
+				<label id="lblMessageErreur"></label>
+				<div><label>Nom<span>*</span></label><input type="text" id="txtNom" name="txt"  size="40" ></div>
+				<div><label>Prénom<span>*</span></label><input type="text" id="txtPrenom" name="txt" size="40"></div>
+				<div><label>Âge<span>*</span></label><input type="text" id="txtAge" name="txtAge" size="40"></div>
+				<div><label>Adresse<span>*</span></label><input type="text" id="txtAdresse" name="txt" size="40" ></div>
+				<div><label>Ville<span>*</span></label><input type="text" id="txtVille" name="txt" size="40" ></div>
+				<div><label>Code postal</label><input type="text" id="txtCodePostal" name="txtCodePostal" size="15" ></div>
+				<div><label for="tel">Téléphone<span>*</span></label><input type="text" id="txtTel" name="txt" size="13" class="obligatoire" value=""></div>
+				<div><label>Code permanant</label><input type="text" id="txtCodePerm" name="txtCodePerm" size="12" ></div>
+				<label for="type">Catégorie</label><select id="type" name="type">
+					<option value="adulte" selected>adulte</option>
+					<option value="étudiant">étudiant</option>
+					<option value="retraité">retraité</option>
+				</select>
+				<div class="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="submit" />   <input class="bouton" type="reset"  value="Réintialiser" onclick="return confirm('Voulez-vous vraiment effacer les donées?')"/></div>
+				<div class="Boutons"><input class="bouton" type="button"  value="Ajouter" onclick="Ajouter_onclick()"/> <input class="bouton" type="button"  value="Rechercher nom complet" onclick="Recherche_onclick()"/> <input class="bouton" type="button"  value="Nom du plus jeune" onclick="PlusJeune_onclick()"/></div>
+			</form>
 			<!--ligne de séparation-->
 			<hr>
 		</section>			

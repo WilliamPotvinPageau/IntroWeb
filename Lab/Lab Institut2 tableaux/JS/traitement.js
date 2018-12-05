@@ -1,3 +1,5 @@
+var tabNomComplet=new Array(5), tabAge=new Array(5);
+var tabcpt=0;
 function frmMembre_onsubmit()
 {
     var valide=false;
@@ -40,6 +42,57 @@ function calculTarif()
         break;
     }
     return tarif;
+}
+function Ajouter_onclick()
+{
+    tabNomComplet[tabcpt]=document.getElementById("txtPrenom").value+" "+document.getElementById("txtNom").value;
+    tabAge[tabcpt]=document.getElementById("txtAge").value;
+    alert(tabNomComplet[tabcpt]+", âgé de "+tabAge[tabcpt]+" ans, à été ajouté");
+    tabcpt++;
+}
+function Recherche_onclick()
+{
+    if (rechercherNomComplet()===5)
+    {
+        document.getElementById("lblMessageErreur").innerHTML="La personne recherchée n'as pas été trouvée"
+    }
+    else
+    {
+        document.getElementById("lblMessageErreur").innerHTML=tabNomComplet[rechercherNomComplet()]+" est âgé de "+tabAge[rechercherNomComplet()]+" ans";
+    }
+}
+function rechercherNomComplet()
+{
+    var trouve=false, i=0, nom=document.getElementById("txtPrenom").value+" "+document.getElementById("txtNom").value;
+    while (trouve===false && i<5)
+    {
+        if (tabNomComplet[i]===nom)
+        {
+            trouve=true;
+        }
+        else
+        {
+            i++
+        }
+    }
+    return i;
+}
+function PlusJeune_onclick()
+{
+    document.getElementById("lblMessageErreur").innerHTML="Le membre le plus jeune est "+tabNomComplet[trouverPlusJeune()]+" âgé de "+tabAge[trouverPlusJeune()]+" ans";
+}
+function trouverPlusJeune()
+{
+    var i, PlusJeune=9999999, iSav;
+    for(i=0;i<5;i++)
+    {
+        if (tabAge[i]<PlusJeune)
+        {
+            PlusJeune=tabAge[i];
+            iSav=i;
+        }
+    }
+    return iSav;
 }
 function valideChamps()
 {
