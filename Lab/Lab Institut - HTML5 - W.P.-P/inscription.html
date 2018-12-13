@@ -39,25 +39,26 @@
 			<!--fin Nav-->
 			<h1>Entrez les informations du membre</h1>
 			<!--boîte de texte-->
-		<form method="get" id="frmMembre" action="" >
+		<form method="get" id="frmMembre" action="Reponse.htm" onsubmit="return confirm('Voulez-vous envoyer les infos?')">
 			<label id="lblMessageErreur"></label>
-			<div><label>Nom<span>*</span></label><input type="text" id="txtNom" name="txtNom" size="40" ></div>
-			<div><label>Prénom<span>*</span></label><input type="text" id="txtPrenom" name="txtPrenom" size="40"></div>
-			<div><label>Adresse<span>*</span></label><input type="text" id="txtAdresse" name="txtAdresse" size="40" ></div>
-			<div><label>Ville<span>*</span></label><input type="text" id="txtVille" name="txtVille" size="40" ></div>
-			<div><label>Code postal</label><input type="text" id="txtCodePostal" name="txtCodePostal" size="15" ></div>
-			<div><label for="tel">Téléphone<span>*</span></label><input type="text" id="txtTel" name="txtTel" size="13" class="obligatoire" value=""></div>
-			<div><label>Code permanant</label><input type="text" id="txtCodePerm" name="txtCodePerm" size="12" ></div>
+			<div><label>Nom<span>*</span></label><input type="text" id="txtNom" name="txtNom" size="40" maxlength="120" pattern="[A-Z][a-z]+((-| )[A-Z][a-z])?" required="required"></div>
+			<div><label>Prénom<span>*</span></label><input type="text" id="txtPrenom" name="txtPrenom" size="40" maxlength="120" pattern="[A-Z][a-z]+((-| )[A-Z][a-z])?" required="required"></div>
+			<div><label>Adresse<span>*</span></label><input type="text" id="txtAdresse" name="txtAdresse" size="40" maxlength="120" pattern="\d+\s[A-z]+((-| )[A-z]+)?" required="required"></div>
+			<div><label>Ville<span>*</span></label><input type="text" id="txtVille" name="txtVille" size="40" maxlength="120" pattern="[A-Z][a-z]+((-| )[A-Z][a-z])?" required="required"></div>
+			<div><label>Code postal</label><input type="text" id="txtCodePostal" name="txtCodePostal" size="15" maxlength="7" pattern="[A-z]\d[A-z] \d[A-z]\d" placeholder="A9A 9A9"></div>
+			<div><label for="tel">Téléphone<span>*</span></label><input type="text" id="txtTel" name="txtTel" size="13" class="obligatoire" value="" type="tel" maxlength="15" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" placeholder="(888) 888-8888" required="required"></div>
+			<div><label>Code permanant</label><input type="text" id="txtCodePerm" name="txtCodePerm" size="12" maxlength="12" pattern="[A-Z]{4}\d{8}" placeholder="AAAA99999999"></div>
 			<label for="type">Catégorie</label><select id="lstType" name="type">
 				<option value="adulte" selected>adulte</option>
 				<option value="étudiant">étudiant</option>
 				<option value="retraité">retraité</option>
 			</select>
-			<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="button" />   <input class="bouton" type="button" value="Réintialiser"/></div>
+			<div id="Boutons"><input class="bouton" value="Envoyer" id="btnEnvoyer" type="submit" />   <input class="bouton" type="reset" value="Réintialiser" onclick="return confirm('Voulez-vous effacer les infos?')"/></div>
 
 		</form>
 			<!--ligne de séparation-->
 			<hr>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/6n5Yf2C5ncY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		</section>
 		
